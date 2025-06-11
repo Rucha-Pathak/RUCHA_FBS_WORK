@@ -1,13 +1,17 @@
 void main(){
-	int n,i=1;
-	printf("Enter number :");
+	int n,status=0;
+	printf("Enter the number:");
 	scanf("%d",&n);
 	
-	while(i<n+1){
-		if(n%i!=0 && n%1==0 && n%n==0)
-			printf("it is prime");
-		else
-		    printf("it is not prime");
-	i++;
+	for(int i=2;i<(n/2);i++){
+		if(n%i==0)
+		status++;
+        break;
 	}
+	if(status==0)
+		printf("%d is prime ",n);
+	else
+		printf("%d is not prime ",n);
+	
+	
 }
