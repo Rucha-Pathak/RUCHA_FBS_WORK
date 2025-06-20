@@ -1,17 +1,34 @@
+//Wap to reverse the array
 void main()
 {
-	int n;
-	printf("enter the n:");
-	scanf("%d",&n);
-	
-	for(int i=1;i<=n;i++){
-		for(int j=1; j<=n;j++){
-			if(j==1||i==1||j==n||i==n){
-				printf("* ");
-			}
-			else
-				printf("  ");
-		}
-		printf("\n");
+	int arr[10];
+	printf("enter the array elements: ");
+	for(int i=0;i<10;i++)
+	{
+		scanf("%d",&arr[i]);
 	}
+	printf("Array elements are: ");
+	for(int i=0;i<10;i++)
+	{
+		printf("%d  ",arr[i]);
+	}
+	
+	int temp;
+    for(int i=0; i<10/2 ; i++)
+    {
+    	temp = arr[i];
+        arr[i] = arr[10 - 1 - i];
+        arr[10 - 1 - i] = temp;
+	}
+	
+	printf("\nnew array elements are: ");
+	
+	for(int i=0; i<10 ; i++)
+	{
+		printf("%d  ",arr[i]);
+	}
+
+
+
+
 }
