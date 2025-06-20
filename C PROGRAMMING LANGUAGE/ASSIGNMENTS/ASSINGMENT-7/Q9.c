@@ -1,23 +1,17 @@
-//reverse the given array
 void main()
 {
-	int arr[10];
-	printf("enter the array elements:");
-	for(int i=0;i<10;i++)
-	{
-		scanf("%d",arr[i]);
-	}
-	printf("\narray elements are:");
-	for(int i=0;i<10;i++)
-	{
-		printf("%d  ",arr[i]);
-	}
+	int n;
+	printf("enter the n:");
+	scanf("%d",&n);
 	
-//	int n=9;
-//	for(int i=0;i<10;i++)
-//	{
-//		arr[i] = arr[n-i];
-//		n--;
-//	}
-//	
+	for(int i=1;i<=n;i++){
+		for(int j=1; j<=n;j++){
+			if(j==1||i==1||j==n||i==n){
+				printf("* ");
+			}
+			else
+				printf("  ");
+		}
+		printf("\n");
+	}
 }
