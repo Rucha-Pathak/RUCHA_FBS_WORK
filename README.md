@@ -1,2 +1,2 @@
 # RUCHA_FBS_WORK
-This repository contain all tasks performed by me.
+💻 Hi, I’m Rucha! This repo contains my structured approach to learning and applying programming concepts through code
