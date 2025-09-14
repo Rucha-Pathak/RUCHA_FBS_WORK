@@ -1,71 +1,69 @@
+import java.util.Scanner;
+
 class Student {
-    int rollno;
+    int rollNo;
     String name;
-    double percentage;
+    double marks;
 
-    Student(int rollno, String name, double percentage) {
-        this.rollno = rollno;
-        this.name = name;
-        this.percentage = percentage;
-    }
-}
-
-class Employee {
-    int id;
-    String name;
-    double annualSalary;
-
-    Employee(int id, String name, double annualSalary) {
-        this.id = id;
-        this.name = name;
-        this.annualSalary = annualSalary;
-    }
-}
-
-class Bank {
-    // Loan for Student
-    void approveLoan(Student s) {
-        double loan = 0;
-        if (s.percentage > 80) loan = 200000;
-        else if (s.percentage >= 60) loan = 100000;
-        else if (s.percentage >= 40) loan = 50000;
-        else loan = 0;
-
-        if (loan > 0)
-            System.out.println("Student " + s.name + " approved loan: ₹" + loan);
-        else
-            System.out.println("Student " + s.name + " not eligible for loan.");
+    void setRollNo(int r) {
+        this.rollNo = r;
     }
 
-    // Loan for Employee
-    void approveLoan(Employee e) {
-        double loan = 0;
-        if (e.annualSalary > 1200000) loan = 700000;
-        else if (e.annualSalary >= 1000000) loan = 600000;
-        else if (e.annualSalary >= 600000) loan = 500000;
-        else if (e.annualSalary >= 400000) loan = 400000;
-        else loan = 0;
+    void setName(String n) {
+        this.name = n;
+    }
 
-        if (loan > 0)
-            System.out.println("Employee " + e.name + " approved loan: ₹" + loan);
-        else
-            System.out.println("Employee " + e.name + " not eligible for loan.");
+    void setMarks(double m) {
+        this.marks = m;
+    }
+
+    int getRollNo() {
+        return this.rollNo;
+    }
+
+    String getName() {
+        return this.name;
+    }
+
+    double getMarks() {
+        return this.marks;
+    }
+
+    void display() {
+        System.out.println("Roll No: " + this.rollNo + ", Name: " + this.name + ", Marks: " + this.marks);
     }
 }
 
 class Test {
     public static void main(String[] args) {
-        Bank bank = new Bank();
+        Student s1 = new Student();
+        s1.setRollNo(101);
+        s1.setName("Rucha");
+        s1.setMarks(92.5);
+        s1.display();
 
-        Student s1 = new Student(101, "Rucha", 85);
-        Student s2 = new Student(102, "Amit", 55);
+        Scanner sc = new Scanner(System.in);
 
-        Employee e1 = new Employee(201, "Sneha", 1300000);
-        Employee e2 = new Employee(202, "Rahul", 350000);
+	Student s2 = new Student();
 
-        bank.approveLoan(s1);
-        bank.approveLoan(s2);
-        bank.approveLoan(e1);
-        bank.approveLoan(e2);
+	System.out.println("Enter roll no: ");
+	int r = sc.nextInt();
+	sc.nextLine();
+
+	System.out.println("Enter name: ");
+	String n = sc.nextLine();
+
+	System.out.println("Enter marks: ");
+	double m = sc.nextDouble();
+	
+	s2.setRollNo(r);
+        s2.setName(n);
+        s2.setMarks(m);
+	s2.getRollNo();
+	s2.getRollNo();
+        s2.display();
+
+
+
     }
 }
