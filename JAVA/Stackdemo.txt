@@ -1,0 +1,70 @@
+import java.util.*;
+
+class StackUsingLinkedlist
+{
+	LinkedList<Integer> l1 = new LinkedList<Integer>();
+	 
+	 void push(int d)//to add element into stack
+	 {
+		 l1.addFirst(d);
+		 System.out.println(d + " added susccessfully");
+	 }
+	
+	 int pop()//to remove element from stack
+	 {
+		 if(l1.isEmpty())
+		 {
+			 System.out.println("Stack is Empty");
+			 return -1;
+		 }
+		 int r = l1.removeFirst();
+		 System.out.println(r+ " removed from stack !");
+		 return r;
+	 }
+	 
+	 int peek()//to display top element of stack
+	 {
+		 if(l1.isEmpty())
+		 {
+			 System.out.println("Stack is empty");
+			 return -1;
+		 }
+		  return l1.getFirst();
+	 }
+	 
+	 boolean isEmpty()//to check wheather stack is empty or not
+	 {
+		  return l1.isEmpty();
+	 }
+	 void display()
+	 {
+		 System.out.println("Stack elements are: "+l1);
+	 }
+}
+
+public class TestStack {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		StackUsingLinkedlist stack = new StackUsingLinkedlist();
+		stack.push(10);
+		stack.push(20);
+		stack.push(30);
+		stack.push(40);
+		stack.display();
+		stack.pop();
+		System.out.println("top of stack : "+stack.peek());
+		stack.display();
+		stack.push(50);
+		stack.push(60);
+		stack.push(70);
+		stack.display();
+		stack.pop();
+		stack.pop();
+		stack.display();
+		System.out.println("top of stack : "+stack.peek());
+		stack.display();
+	}
+
+}

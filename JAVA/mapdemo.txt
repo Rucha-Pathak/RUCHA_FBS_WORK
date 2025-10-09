@@ -1,0 +1,96 @@
+//map work on the basis of key value pair
+//sorting is based on key basis in tree map
+//key must be comparable because sorting is done on the basis of key in tree map
+import java.util.*;
+
+class Student
+{
+	int roll;
+	String name;
+	double marks;
+	
+	public int getRoll() {
+		return roll;
+	}
+	public void setRoll(int roll) {
+		this.roll = roll;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getMarks() {
+		return marks;
+	}
+	public void setMarks(double marks) {
+		this.marks = marks;
+	}
+	
+	
+	public Student() 
+	{
+		//super();
+		this.roll = 0;
+		this.name = "not available";
+		this.marks = 0;
+	}
+	
+	public Student(int roll, double marks ,String name) {
+		//super();
+		this.roll = roll;
+		this.name = name;
+		this.marks = marks;
+	}
+	public String toString() {
+		return "  Student roll=" + roll + ", name=" + name + ", marks=" + marks ;
+	}
+}
+class MyKey implements Comparable
+{
+	int key;
+
+	public MyKey(int key) {
+		//super();
+		this.key = key;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		MyKey m1 = (MyKey)o;
+		return this.key-m1.key ;
+	}
+
+	@Override
+	public String toString() {
+		return "\nMyKey key =" + key ;
+	}
+	
+	
+}
+public class TestMap {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+//		TreeMap tm = new TreeMap();
+//		tm.put(1, "Apple");
+//		tm.put(2,"banana");
+//		tm.put(5, "watermelon");
+//		tm.put(3,"Strawberry");
+//		tm.put(4, "muskmelon");
+//		
+//		System.out.println(tm);//{1=Apple, 2=banana, 3=Strawberry, 4=muskmelon, 5=watermelon}
+	
+	   TreeMap tm = new TreeMap();
+	   tm.put(new MyKey(1), new Student(1,333,"Dhoni"));
+	   tm.put(new MyKey(5), new Student(5,8333,"Das"));
+	   tm.put(new MyKey(3), new Student(3,533,"Dhodasfsdni"));
+	   tm.put(new MyKey(10), new Student(10,33,"Dhoadsdani"));
+	
+	   System.out.println(tm);
+	}
+
+}
